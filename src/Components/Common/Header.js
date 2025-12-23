@@ -40,7 +40,7 @@ const Header = () => {
     }, []);
 
     return (
-        <header className="sticky backdrop-blur-xl bg-black/10 top-0 z-50">
+        <header className="sticky backdrop-blur-xl bg-black/50 top-0 z-50">
             <div className="container mx-auto px-4">
                 <div className=" rounded-full shadow-lg">
                     <div className="flex items-center justify-between px-6 py-4">
