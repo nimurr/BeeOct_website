@@ -36,7 +36,7 @@ const Services = () => {
                         ))}
                     </div>
                 </div>
-                <div className="relative w-full mt-10 overflow-hidden">
+                <div className="relative w-full mt-5 lg:mt-10 overflow-hidden">
                     <div className="marquee2 flex items-center gap-16">
                         {[...Array(6)].map((_, i) => (
                             <div key={i} className="flex items-center gap-16 shrink-0">
