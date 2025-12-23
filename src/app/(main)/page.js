@@ -1,21 +1,22 @@
 'use client';
 import Hero from '@/Components/Home/Hero';
-import Section from '@/Components/Home/Section';
+import Services from '@/Components/Home/Services';
 import React from 'react';
 
 const Page = () => {
 
 
     return (
-        <div className='container flex flex-col gap-5 md:gap-10 mx-auto'>
+        <div className=''>
 
-            <Section>
-                <section id="home">
-                    <Hero />
-                </section>
-            </Section>
+            <section id="home">
+                <Hero />
+            </section>
+            <section id="services">
+                <Services />
+            </section>
 
-           
+
         </div>
     );
 }

@@ -1,9 +1,8 @@
 'use client';
-import React, { useEffect, useState } from "react";
-import { HiMenuAlt3, HiX } from "react-icons/hi";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
-import { HiOutlineSlash } from "react-icons/hi2";
+
+import { useEffect, useState } from "react";
 import Link from "next/link";
+import { HiMenuAlt3, HiX } from "react-icons/hi";
 
 const Header = () => {
     const [open, setOpen] = useState(false);
@@ -11,17 +10,19 @@ const Header = () => {
 
     const menuItems = [
         "Home",
+        "Services",
+        "Products",
+        "Industry",
         "About",
-        "Skills",
-        "Experience",
-        "Projects",
-        "Education",
+        "Blog",
         "Contact",
     ];
 
-    // Detect active section
+    // Active section detection
     useEffect(() => {
-        const sections = menuItems.map(item => document.getElementById(item.toLowerCase()));
+        const sections = menuItems.map(item =>
+            document.getElementById(item.toLowerCase())
+        );
 
         const observer = new IntersectionObserver(
             entries => {
@@ -31,7 +32,7 @@ const Header = () => {
                     }
                 });
             },
-            { threshold: 0.6 } // 60% of section visible
+            { threshold: 0.6 }
         );
 
         sections.forEach(section => section && observer.observe(section));
@@ -39,37 +40,52 @@ const Header = () => {
     }, []);
 
     return (
-        <header className="sticky top-0 z-50 py-2">
+        <header className="sticky backdrop-blur-xl bg-black/10 top-0 z-50">
             <div className="container mx-auto px-4">
-                <div className="backdrop-blur-lg bg-white/10 border border-white/20 rounded-2xl shadow-lg">
-                    <div className="flex items-center justify-between px-6 py-5">
+                <div className=" rounded-full shadow-lg">
+                    <div className="flex items-center justify-between px-6 py-4">
 
                         {/* Logo */}
-                        <Link href="/" className="text-primary flex items-center text-3xl font-semibold tracking-wide">
-                            <FaChevronLeft /> Nerob <HiOutlineSlash className="text-4xl -mr-4" /> <FaChevronRight />
+                        <Link href="/" className="flex items-center gap-2 text-xl font-medium text-gray-200">
+                            <img className="w-16" src="/Images/Home/Vector.png" alt="" />
                         </Link>
 
                         {/* Desktop Menu */}
-                        <nav className="hidden md:flex items-center gap-10">
+                        <nav className="hidden md:flex items-center gap-8">
                             {menuItems.map(item => {
                                 const id = item.toLowerCase();
                                 const isActive = active === id;
+
                                 return (
                                     <a
                                         key={id}
                                         href={`#${id}`}
-                                        className={`relative text-base font-medium transition-all duration-300
-                      ${isActive ? "text-primary" : "text-white hover:text-primary"}`}
+                                        className={`relative text-base transition-all duration-300
+                                            ${isActive
+                                                ? "text-white drop-shadow-[0_0_5px_#0059ff]"
+                                                : "text-gray-400 "
+                                            }`}
                                     >
                                         {item}
-                                        <span
+                                        {/* <span
                                             className={`absolute left-0 -bottom-1 h-[2px] bg-primary transition-all duration-300
-                        ${isActive ? "w-full" : "w-0"}`}
-                                        />
+                                        ${isActive ? "w-full" : "w-0"}`}
+                                        /> */}
                                     </a>
+
                                 );
                             })}
                         </nav>
+
+                        {/* CTA Button (Desktop) */}
+                        <div className="hidden md:block">
+                            <Link
+                                href="#contact"
+                                className="bg-white text-primary shadow-[0_0_10px_#0059ff]  px-6 py-3 rounded-full text-sm font-medium hover:bg-gray-200 transition"
+                            >
+                                Schedule a Call
+                            </Link>
+                        </div>
 
                         {/* Mobile Menu Button */}
                         <button
@@ -81,23 +97,36 @@ const Header = () => {
                     </div>
 
                     {/* Mobile Menu */}
-                    <div className={`md:hidden overflow-hidden transition-all duration-300 ${open ? "max-h-96 opacity-100" : "max-h-0 opacity-0"}`}>
+                    <div
+                        className={`md:hidden transition-all duration-300 overflow-hidden
+              ${open ? "max-h-96 opacity-100" : "max-h-0 opacity-0"}`}
+                    >
                         <nav className="flex flex-col gap-4 px-6 pb-6">
                             {menuItems.map(item => {
                                 const id = item.toLowerCase();
                                 const isActive = active === id;
+
                                 return (
                                     <a
                                         key={id}
                                         href={`#${id}`}
                                         onClick={() => setOpen(false)}
-                                        className={`text-sm font-medium transition
-                      ${isActive ? "text-primary" : "text-white hover:text-primary"}`}
+                                        className={`text-base 
+                                        ${isActive ? "text-white drop-shadow-[0_0_10px_#0059ff]" : "text-gray-400 "}`}
                                     >
                                         {item}
                                     </a>
                                 );
                             })}
+
+                            {/* CTA Button (Mobile) */}
+                            <Link
+                                href="#contact"
+                                className="mt-4 text-center bg-white text-black py-2 rounded-full text-sm "
+                                onClick={() => setOpen(false)}
+                            >
+                                Schedule a Call
+                            </Link>
                         </nav>
                     </div>
                 </div>

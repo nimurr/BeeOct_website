@@ -1,69 +1,28 @@
-'use client';
-import React from "react";
+import React from 'react';
+import Section from './Section';
 
-export default function Hero() {
+const Hero = () => {
     return (
-        <section
-            className="min-h-screen flex items-center justify-center px-6 md:py-0 py-10 "
-        >
-            <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-
-                {/* Left Content */}
-                <div className="text-center md:text-left">
-                    <p className="text-base uppercase tracking-widest text-primary mb-3">
-                        Hello, I’m
-                    </p>
-
-                    <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight">
-                        Nimur Rahman <span className="text-primary">Nerob</span>
-                    </h1>
-
-                    <h2 className="mt-4 text-xl md:text-2xl text-gray-300">
-                        Web Developer & AI Developer
-                    </h2>
-
-                    <p className="mt-6 text-gray-400 max-w-xl">
-                        I build modern web applications, interactive experiences, and
-                        scalable software with a focus on performance and clean design.
-                    </p>
-                    <p className="md:mt-6 mt-2 text-gray-400 max-w-xl">
-                        I’m committed to creating impactful digital experiences that blend performance with modern design and usability.
-                    </p>
-
-                    {/* Buttons */}
-                    <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                        <a
-                            href="#projects"
-                            className="px-6 py-3 rounded-xl bg-primary text-tertiary font-medium hover:scale-105 transition"
-                        >
-                            View Resume
-                        </a>
-
-                        <a
-                            href="#contact"
-                            className="px-6 py-3 rounded-xl border border-white/20 text-white backdrop-blur hover:bg-white/10 transition"
-                        >
-                            Contact Me
-                        </a>
+        <div className='min-h-[100vh] relative'>
+            <img className='w-full absolute bottom-1/2 lg:bottom-0 left-0' src="/Images/Home/Hero/sideShadow.png" alt="" />
+            <Section>
+                <div className=' container h-full md:pt-20 pt-10  mx-auto flex flex-col justify-center items-center'>
+                    <h2 className='italic text-2xl lg:text-3xl text-center'>We Are Here To</h2>
+                    <h1 className='text-6xl lg:leading-[1.1] my-5 lg:my-10 lg:text-[100px] text-center font-semibold'>Make Your <span className='text-primary'>Dream</span> <br />Become <span className='text-primary'>Reality</span></h1>
+                    <p className='text-center text-gray-400'>We blend intelligence, creativity, and collaboration to craft <br />digital products that grow, connect, and inspire.</p>
+                    <div className='mt-10 flex justify-center items-center gap-5'>
+                        <button className='bg-white text-primary hover:bg-primary hover:text-white shadow-[0_0_10px_#0059ff]  px-6 py-3 rounded-full text-base font-medium  transition'>Schedule a Call</button>
+                        <button className='bg-primary text-white px-6 py-3 rounded-full text-base font-medium hover:bg-gray-200 hover:text-primary transition'>See Our Projects</button>
                     </div>
                 </div>
-
-                {/* Right Visual */}
-                <div className="flex justify-center md:justify-end ">
-                    <div className="relative flex overflow-hidden justify-end items-end w-64 h-64 md:w-[700px] md:h-[700px] backdrop-blur-sm bg-white/10 rounded-3xl shadow-[0_0_10px_#80ed99] ">
-                        {/* drop shadow apply in this png image  */}
-                        <img
-                            src="/Images/Home/my.png"
-                            alt=""
-                            className="
-                            w-full h-full object-contain
-                            drop-shadow-[0_0_80px_#80ed99]
-                            "
-                        />
-
-                    </div>
+            </Section>
+            <Section>
+                <div>
+                    <img className='w-full lg:mt-0 mt-5' src="/Images/Home/Hero/banner_image.png" alt="" />
                 </div>
-            </div>
-        </section>
+            </Section>
+        </div>
     );
 }
+
+export default Hero;
