@@ -68,6 +68,11 @@ section {
   }
 }
 
+.marquee:hover {
+  animation-play-state: paused;
+  cursor: pointer;
+}
+
 .marquee2 {
   animation: marquee2 25s linear infinite;
 }
@@ -80,4 +85,9 @@ section {
   100% {
     transform: translateX(0%);
   }
+}
+
+.marquee2:hover {
+  animation-play-state: paused;
+  cursor: pointer;
 }
