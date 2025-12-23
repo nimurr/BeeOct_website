@@ -41,9 +41,9 @@ const Header = () => {
 
     return (
         <header className="sticky backdrop-blur-xl bg-black/50 top-0 z-50">
-            <div className="container mx-auto px-4">
+            <div className="container mx-auto px-2 lg:px-4">
                 <div className=" rounded-full ">
-                    <div className="flex items-center justify-between px-6 py-4">
+                    <div className="flex items-center justify-between px-3 lg:px-6 py-4">
 
                         {/* Logo */}
                         <Link href="/" className="flex items-center gap-2 text-xl font-medium text-gray-200">
@@ -95,13 +95,12 @@ const Header = () => {
                             {open ? <HiX /> : <HiMenuAlt3 />}
                         </button>
                     </div>
-
                     {/* Mobile Menu */}
                     <div
                         className={`md:hidden transition-all duration-300 overflow-hidden
               ${open ? "max-h-96 opacity-100" : "max-h-0 opacity-0"}`}
                     >
-                        <nav className="flex flex-col gap-4 px-6 pb-6">
+                        <nav className="flex flex-col gap-4 px-3 lg:px-6 pb-6">
                             {menuItems.map(item => {
                                 const id = item.toLowerCase();
                                 const isActive = active === id;
