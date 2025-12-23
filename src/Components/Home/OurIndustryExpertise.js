@@ -11,6 +11,9 @@ const OurIndustryExpertise = () => {
                         We serve diverse industries with specialized solutions
                     </p>
                 </div>
+                <div className='text-red-500 text-2xl text-center my-20 '>
+                    This section is under constraction.
+                </div>
             </div>
         </div>
     );
