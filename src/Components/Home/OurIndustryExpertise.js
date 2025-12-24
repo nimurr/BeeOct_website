@@ -113,6 +113,23 @@ const OurIndustryExpertise = () => {
                         );
                     })}
                 </div>
+
+                {/* Bottom CTA */}
+                <div className="mt-20 flex flex-col sm:flex-row items-center justify-center gap-6">
+                    <a
+                        href="#contact"
+                        className="bg-white text-black px-8 py-4 rounded-full text-sm font-medium shadow-[0_0_15px_rgba(0,89,255,0.5)] hover:bg-gray-200 transition"
+                    >
+                        Schedule a Call
+                    </a>
+
+                    <a
+                        href="/services"
+                        className="text-primary text-sm font-medium border border-gray-300 px-8 py-4 rounded-full hover:text-gray-300 transition"
+                    >
+                        See Our Services
+                    </a>
+                </div>
             </div>
         </section>
     );

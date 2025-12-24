@@ -33,7 +33,6 @@ html {
 /* Sticky header menu spacing fix */
 section {
   scroll-margin-top: 80px;
-  /* Adjust to header height */
 }
 
 /* Ant design overrides (if used) */
@@ -52,7 +51,7 @@ section {
   -webkit-mask-image: linear-gradient(to bottom, black 100%, transparent 100%);
 }
 
-/* Custom all Animaiton here  */
+/*======================================= Custom all Animaiton here  ==========================================*/
 
 .marquee {
   animation: marquee 25s linear infinite;

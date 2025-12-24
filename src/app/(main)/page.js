@@ -2,6 +2,7 @@
 import AllTechStacks from '@/Components/Home/AllTechStacks';
 import Hero from '@/Components/Home/Hero';
 import OurIndustryExpertise from '@/Components/Home/OurIndustryExpertise';
+import OurServices from '@/Components/Home/OurServices';
 import Services from '@/Components/Home/Services';
 import React from 'react';
 
@@ -14,14 +15,17 @@ const Page = () => {
             <section id="home">
                 <Hero />
             </section>
-            <section id="services">
+            <section id="pertnerships">
                 <Services />
             </section>
-            <section id="industry-expertise">
+            <section id="industry">
                 <OurIndustryExpertise />
             </section>
             <section id="techstacks">
                 <AllTechStacks />
+            </section>
+            <section id="services">
+                <OurServices />
             </section>
 
 
