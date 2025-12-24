@@ -23,7 +23,7 @@ export const metadata = {
 
 export default function Layout({ children }) {
     return (
-        <div className="bg-tertiary w-full overflow-hidden min-h-screen relative bg-grid-pattern">
+        <div className="bg-tertiary w-full overflow-hidden relative bg-grid-pattern">
             <Header />
             {children}
             {/* <Footer /> */}
