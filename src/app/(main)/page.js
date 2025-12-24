@@ -2,6 +2,7 @@
 import AllTechStacks from '@/Components/Home/AllTechStacks';
 import Hero from '@/Components/Home/Hero';
 import OurIndustryExpertise from '@/Components/Home/OurIndustryExpertise';
+import OurProduct from '@/Components/Home/OurProduct';
 import OurServices from '@/Components/Home/OurServices';
 import Services from '@/Components/Home/Services';
 import React from 'react';
@@ -18,6 +19,10 @@ const Page = () => {
             <section id="pertnerships">
                 <Services />
             </section>
+            <section>
+                <OurProduct />
+            </section>
+
             <section id="industry">
                 <OurIndustryExpertise />
             </section>
